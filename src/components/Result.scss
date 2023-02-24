@@ -1,0 +1,12 @@
+.resultContainer {
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  .imageShown {
+    width: 50%;
+    padding: 5vw 0;
+
+  }
+}
