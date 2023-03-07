@@ -12,6 +12,7 @@ import Result from "./components/Result";
 import Register from "./components/Register";
 import History from "./components/History";
 import Profile from "./components/Profile";
+import CameraCapture from "./components/CameraCapture";
 
 function App() {
   // return (
@@ -69,6 +70,7 @@ function App() {
                 <Route path="/Register" element={<Register />}></Route>
                 <Route path="/History" element={<History />}></Route>
                 <Route path="/Profile" element={<Profile />}></Route>
+                <Route path="/camera" element={<CameraCapture />} />
 
 
                 {/*<Route path="/dashboard">*/}
