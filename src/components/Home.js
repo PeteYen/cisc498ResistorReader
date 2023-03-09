@@ -1,6 +1,6 @@
 import "./Home.scss";
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const inputRef = useRef(null);
@@ -10,30 +10,48 @@ const Home = () => {
     inputRef.current.click();
   };
 
+  let navigate = useNavigate();
   const handleFileChange = (event) => {
     const fileObj = event.target.files && event.target.files[0];
     if (!fileObj) {
       return;
     }
 
-    console.log("fileObj is", fileObj);
-
-    // 👇️ reset file input
-    //event.target.value = null;
-
-    // 👇️ is now empty
-    console.log(event.target.files);
-
-    // 👇️ can still access file object here
-    console.log(fileObj);
-    console.log(fileObj.name);
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      navigate(`/processing?img=${encodeURIComponent(dataURL)}`);
+    };
+    reader.readAsDataURL(fileObj);
   };
 
-  let navigate = useNavigate();
   const routeChange = () => {
-    let path = `/processing`;
-    navigate(path);
+    const constraints = {
+      audio: false,
+      video: true,
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then((stream) => {
+      const video = document.createElement("video");
+      video.srcObject = stream;
+      video.onloadedmetadata = () => {
+        video.play();
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataURL = canvas.toDataURL();
+        navigate(`/processing?img=${dataURL}`);
+      };
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   };
+  
+  
 
   return (
     <div>
@@ -67,8 +85,13 @@ const Home = () => {
             </button>
 
             <button onClick={routeChange} className="imgButton">
-              Take a picture
+              Take a picture by Phone
             </button>
+
+            <button onClick={() => navigate("/camera")} className="imgButton">
+              Take a picture by Laptop
+            </button>
+
           </div>
         </div>
 
