@@ -1,0 +1,3 @@
+[submodule "resistorBackEnd"]
+	path = resistorBackEnd
+	url = https://github.com/KonohaChen/resistorBackEnd
