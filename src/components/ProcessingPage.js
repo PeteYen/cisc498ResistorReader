@@ -51,7 +51,10 @@ const ProcessingPage = () => {
           selectable: false,
         });
 
-        canvas.setOverlayImage(cropRect.toDataURL(), canvas.renderAll.bind(canvas));
+        canvas.setOverlayImage(
+          cropRect.toDataURL(),
+          canvas.renderAll.bind(canvas)
+        );
       }
     });
 
@@ -83,23 +86,20 @@ const ProcessingPage = () => {
   return (
     <>
       <div className="processingContainer">
-        <div className="addMoreImage">
-          <button className="addButton">+</button>
-        </div>
         <div className="processingImg">
           <canvas ref={canvasRef} />
           <div className="imgButtons">
-            <button className="toolButton">remove</button>
-            <button className="toolButton edit" onClick={handleEditClick}>
+            <button className="toolButton btn">remove</button>
+            <button className="toolButton btn" onClick={handleEditClick}>
               edit
             </button>
-            <button className="toolButton crop" onClick={handleCropClick}>
+            <button className="toolButton btn" onClick={handleCropClick}>
               crop
             </button>
           </div>
         </div>
         <div className="getResultButton">
-          <button onClick={routeChange} className="getResult">
+          <button onClick={routeChange} className="getResult btn">
             get final result
           </button>
         </div>
