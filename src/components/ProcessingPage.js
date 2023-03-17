@@ -5,9 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import { fabric } from "fabric";
 
 const ProcessingPage = () => {
-  const location = useLocation();
+  const location = useLocation()
   const imageURL = new URLSearchParams(location.search).get("img");
-
+  console.log(imageURL);
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/result`;
