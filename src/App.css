@@ -4,8 +4,9 @@
 }
 
 nav {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   height: 10vh;
+  z-index: 1041;
 }
 nav ul {
   height: 10vh;
@@ -18,9 +19,10 @@ nav ul {
   text-decoration: none;
   align-items: center;
   align-content: center;
-  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-  color: #FFFFFF;
-  font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #110101;
+  font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 nav ul li {
   text-decoration: none;
@@ -30,8 +32,12 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #383e45;
   font-weight: bolder;
+  transition: var(--transition);
+}
+nav ul li a:hover {
+  color: #6bc0bc;
 }
 nav ul .icon {
   padding: 0 4vw;

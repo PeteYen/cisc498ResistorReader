@@ -31,27 +31,26 @@ const Home = () => {
       video: true,
     };
 
-    navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-      const video = document.createElement("video");
-      video.srcObject = stream;
-      video.onloadedmetadata = () => {
-        video.play();
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const dataURL = canvas.toDataURL();
-        navigate(`/processing?img=${dataURL}`);
-      };
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+        const video = document.createElement("video");
+        video.srcObject = stream;
+        video.onloadedmetadata = () => {
+          video.play();
+          const canvas = document.createElement("canvas");
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const dataURL = canvas.toDataURL();
+          navigate(`/processing?img=${dataURL}`);
+        };
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
-  
-  
 
   return (
     <div>
@@ -80,18 +79,20 @@ const Home = () => {
               onChange={handleFileChange}
               type="file"
             />
-            <button onClick={handleClick} className="imgButton">
+            <button onClick={handleClick} className="imgButton btn">
               Upload an image
             </button>
 
-            <button onClick={routeChange} className="imgButton">
+            <button onClick={routeChange} className="imgButton btn">
               Take a picture by Phone
             </button>
 
-            <button onClick={() => navigate("/camera")} className="imgButton">
+            <button
+              onClick={() => navigate("/camera")}
+              className="imgButton btn"
+            >
               Take a picture by Laptop
             </button>
-
           </div>
         </div>
 

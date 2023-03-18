@@ -1,15 +1,14 @@
-
 .homeContainer {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   max-width: 100%;
-  .headerContainer{
+  .headerContainer {
     border: 1px black solid;
-      display: flex;
-      flex-direction: row;
-      overflow-block: hidden;
+    display: flex;
+    flex-direction: row;
+    overflow-block: hidden;
     .homeHeader {
       border: 1px green solid;
       width: 80%;
@@ -28,26 +27,44 @@
       flex-direction: row;
 
       .login {
-        color: #FFFFFF;
+        color: #ffffff;
         width: 13vw;
         cursor: pointer;
-        background-image: linear-gradient(92.88deg, #000000 9.16%, #000000 43.89%, #030303 64.72%);
+        background-image: linear-gradient(
+          92.88deg,
+          #000000 9.16%,
+          #000000 43.89%,
+          #030303 64.72%
+        );
       }
-      .login:hover{
-        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+      .login:hover {
+        background-image: linear-gradient(
+          92.88deg,
+          #455eb5 9.16%,
+          #5643cc 43.89%,
+          #673fd7 64.72%
+        );
       }
       .register {
-        color: #FFFFFF;
+        color: #ffffff;
         width: 13vw;
         cursor: pointer;
-        background-image: linear-gradient(92.88deg, #000000 9.16%, #000000 43.89%, #000000 64.72%);
+        background-image: linear-gradient(
+          92.88deg,
+          #000000 9.16%,
+          #000000 43.89%,
+          #000000 64.72%
+        );
       }
       .register:hover {
-
-        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+        background-image: linear-gradient(
+          92.88deg,
+          #455eb5 9.16%,
+          #5643cc 43.89%,
+          #673fd7 64.72%
+        );
       }
     }
-
   }
 
   .homeContent {
@@ -56,7 +73,7 @@
     height: 70vh;
     flex-direction: column;
     align-items: center;
-    h2{
+    h2 {
       color: #383e45;
       padding: 30px;
       text-align: center;
@@ -64,57 +81,47 @@
       //font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
       font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
     }
-    p{
+    p {
       color: #75828d;
       text-align: center;
       font-weight: 100;
       font-size: 20px;
       //font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
     }
-    .fileContainer{
+    .fileContainer {
       display: flex;
       flex-direction: column;
       height: 70vh;
       justify-content: space-evenly;
     }
-    .imgButton  {
-      background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    .imgButton {
       border-radius: 8px;
-      border-style: none;
       width: 80vw;
       box-sizing: border-box;
-      color: #FFFFFF;
       cursor: pointer;
       flex-shrink: 0;
-      font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+      font-family: "Inter UI", "SF Pro Display", -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
       font-size: 20px;
       font-weight: 500;
       height: 4rem;
       padding: 0 1.6rem;
       text-align: center;
       text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-      transition: all .5s;
+
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
     }
 
-      .button-36:hover {
-        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-        transition-duration: .1s;
-      }
-
-      @media (min-width: 768px) {
-        //.button-36 {
-        //  padding: 0 2.6rem;
-        //}
-        .imgButton{
-          width: 300px;
-        }
-
+    @media (min-width: 768px) {
+      //.button-36 {
+      //  padding: 0 2.6rem;
+      //}
+      .imgButton {
+        width: 300px;
       }
     }
-  .homeFooter {
-
   }
 }
