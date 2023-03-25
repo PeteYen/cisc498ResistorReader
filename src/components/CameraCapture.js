@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 const CameraCapture = () => {
   const videoRef = useRef();
   const canvasRef = useRef();
@@ -37,11 +39,32 @@ const CameraCapture = () => {
     setVideoLoaded(true);
   };
 
+  const sendPhotoToBackend = async (dataURL) => {
+    try {
+      const response = await fetch("http://localhost:3001/upload", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ dataURL }),
+      });
+  
+      if (response.ok) {
+        navigate(`/processing?img=${encodeURIComponent(dataURL)}`);
+      } else {
+        throw new Error("Failed to upload image");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+
   const handleCapture = () => {
     if (!canvasRef.current || !videoRef.current) {
       return;
     }
-
+  
     const canvas = canvasRef.current;
     const video = videoRef.current;
     const context = canvas.getContext("2d");
@@ -49,7 +72,9 @@ const CameraCapture = () => {
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const dataURL = canvas.toDataURL("image/png");
-    navigate(`/processing?img=${encodeURIComponent(dataURL)}`);
+  
+    // Send the captured photo to the backend
+    sendPhotoToBackend(dataURL);
   };
 
   return (
