@@ -1,62 +1,47 @@
 import './Register.scss'
 
+import React, { useState } from "react";
+
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    return (
-        <div className="registerContainer">
-            <div className="registerContent">
-                <div className="nameInputContainer">
-                    <label>User Name</label>
-                    <br/>
-                    <input
-                        type="string"
-                        className="nameInput"
-                        placeholder="Enter user name"
-                    />
-                    <br/>
-                    {/*<label>Last Name</label>*/}
-                    {/*<br/>*/}
-                    {/*<input*/}
-                    {/*    type="string"*/}
-                    {/*    className="nameInput"*/}
-                    {/*    placeholder="Enter last name"*/}
-                    {/*/>*/}
-                </div>
-                <div className="emailInputContainer">
-                    <label>Email address</label>
-                    <br/>
-                    <input
-                        type="email"
-                        className="emailInput"
-                        placeholder="Enter email"
-                    />
-                </div>
-                <div className="passwordInputContainer">
-                    <label>Password</label>
-                    <br/>
-                    <input
-                        type="password"
-                        className="passwordInput"
-                        placeholder="Enter password"
-                    />
-                    <br/>
-                    <label>Confirm Password</label>
-                    <br/>
-                    <input
-                        type="password"
-                        className="passwordInput"
-                        placeholder="Enter password"
-                    />
-                </div>
-                <div className="submitButtonContainer">
-                    <button type="submit" className="registerButton">
-                        Sign Up
-                    </button>
-                </div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-            </div>
-        </div>
-    )
-}
+    const response = await fetch("http://localhost:3001/Register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
 
-export default Register
+    if (response.ok) {
+      alert("User registered successfully");
+    } else {
+      alert("Registration failed");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
+};
+
+export default Register;

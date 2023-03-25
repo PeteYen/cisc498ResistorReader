@@ -9,44 +9,51 @@
 import "./LogIn.scss";
 import { useNavigate } from "react-router-dom";
 
-const LogIn = () => {
-  let navigate = useNavigate();
-  const SignIn = () => {
-    localStorage.user = true;
-    // window.location.reload();
-    let path = `/Profile`;
-    navigate(path);
+import React, { useState } from "react";
+
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:3001/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password }),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    const token = data.token;
+    localStorage.setItem("token", token);
+    alert("User logged in successfully");
+  } else {
+    alert("Invalid username or password");
+  }
   };
 
   return (
-    <div className="LogInContainer">
-      <div className="LogInContent">
-        <div className="emailInputContainer">
-          <label>Email address</label>
-          <br />
-          <input
-            type="email"
-            className="emailInput"
-            placeholder="Enter email"
-          />
-        </div>
-        <div className="passwordInputContainer">
-          <label>Password</label>
-          <br />
-          <input
-            type="password"
-            className="passwordInput"
-            placeholder="Enter password"
-          />
-        </div>
-        <div onClick={SignIn} className="submitButtonContainer">
-          <button type="submit" className="logInButton">
-            Login
-          </button>
-        </div>
-      </div>
-    </div>
+  <div>
+  <h1>Login</h1>
+  <form onSubmit={handleSubmit}>
+  <input
+  type="text"
+  placeholder="Username"
+  value={username}
+  onChange={(e) => setUsername(e.target.value)}
+  />
+  <input
+  type="password"
+  placeholder="Password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  />
+  <button type="submit">Login</button>
+  </form>
+  </div>
   );
-};
+  };
 
-export default LogIn;
+  export default Login;
+    

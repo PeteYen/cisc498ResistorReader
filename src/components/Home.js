@@ -4,6 +4,7 @@ import "./Home.scss";
 
 const Home = () => {
   const navigate = useNavigate();
+  const fileInputRef = useRef(null);
 
   const customRequest = async ({ file, onSuccess, onError }) => {
       const reader = new FileReader();
@@ -82,7 +83,13 @@ const Home = () => {
         .catch((err) => {
           console.error(err);
         });
+
+        
     };
+  
+  const handleUploadButtonClick = () => {
+    fileInputRef.current.click();
+  };
 
   return (
     <div>
@@ -91,7 +98,15 @@ const Home = () => {
           <h2>Upload your image below</h2>
           <p>Read value from your resistor color stripes.</p>
           <div className="fileContainer">
-            <input type="file" onChange={(event) => customRequest(event)} />
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: "none" }}
+              onChange={(event) =>
+                customRequest({ file: event.target.files[0] })
+              }
+            />
+            <button onClick={handleUploadButtonClick} className="imgButton btn">Upload Image</button>
             <button onClick={routeChange} className="imgButton btn">
               Take a picture by Phone
             </button>
