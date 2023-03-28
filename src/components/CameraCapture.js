@@ -41,7 +41,7 @@ const CameraCapture = () => {
 
   const sendPhotoToBackend = async (dataURL) => {
     try {
-      const response = await fetch("http://localhost:3001/upload", {
+      const response = await fetch("http://localhost:8080/api/upload", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
