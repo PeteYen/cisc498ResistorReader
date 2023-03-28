@@ -5,7 +5,6 @@ import "./Home.scss";
 const Home = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  const [processedImageURL, setprocessedImageURL] = useState(null);
 
   const customRequest = async ({ file, onSuccess, onError }) => {
       const reader = new FileReader();
@@ -23,9 +22,7 @@ const Home = () => {
           });
 
           if (response.ok) {
-            const processedImageURL = await response.text();
-            setprocessedImageURL(processedImageURL)
-            navigate(`/Result?img=${encodeURIComponent(processedImageURL)}`);
+            navigate(`/Result`);
             onSuccess();
           } else {
             onError(new Error("Failed to upload image"));
@@ -51,8 +48,7 @@ const Home = () => {
         });
   
         if (response.ok) {
-          const processedImageURL = await response.text()
-          navigate(`/Result?img=${encodeURIComponent(processedImageURL)}`);
+          navigate(`/Result`);
         } else {
           throw new Error("Failed to upload image");
         }
@@ -83,7 +79,7 @@ const Home = () => {
   
             // Send the taken photo to the backend
             await sendPhotoToBackend(dataURL);
-            navigate('Result?img=${encodeURIComponent(processedImageURL)}');
+            navigate('/Result');
           };
         })
         .catch((err) => {
