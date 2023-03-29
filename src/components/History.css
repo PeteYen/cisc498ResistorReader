@@ -1,6 +1,16 @@
 .historyContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+.historyContainer .imageContainer {
+  align-items: center;
+}
+.historyContainer .imageContainer img {
+  align-items: center;
+  width: 80vw;
 }
 
 /*# sourceMappingURL=History.css.map */

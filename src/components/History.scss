@@ -1,4 +1,17 @@
 .historyContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  .imageContainer{
+
+    align-items: center;
+
+    img {
+      align-items: center;
+      width: 80vw;
+    }
+  }
+
 }
