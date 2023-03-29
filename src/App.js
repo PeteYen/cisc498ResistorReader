@@ -11,9 +11,8 @@ import Home from "./components/Home";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import About from "./components/About";
 import Result from "./components/Result";
-import Register from "./components/Register";
+import Register from "./components/History";
 import History from "./components/History";
-import Profile from "./components/Profile";
 import CameraCapture from "./components/CameraCapture";
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
   const navigate = useNavigate();
   const logout = () => {
     localStorage.clear();
-    navigate("./Register");
+    navigate("./History");
   };
 
   return (
@@ -38,12 +37,12 @@ function App() {
           {auth ? (
             <>
               <li className="navItem">
-                <Link to="/Profile">Profile</Link>
+                {/*<Link to="/Profile">Profile</Link>*/}
               </li>
               <li className="navItem">
-                <Link onClick={logout} to="/">
-                  Logout
-                </Link>
+                {/*<Link onClick={logout} to="/">*/}
+                {/*  Logout*/}
+                {/*</Link>*/}
               </li>
             </>
           ) : (
@@ -52,7 +51,7 @@ function App() {
                 <Link to="/About">About</Link>
               </li>
               <li className="navItem">
-                <Link to="/Register">Register</Link>
+                <Link to="/History">History</Link>
               </li>
             </>
           )}
@@ -63,9 +62,9 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/Result" element={<Result />}></Route>
-        <Route path="/Register" element={<Register />}></Route>
+        {/*<Route path="/Register" element={<Register />}></Route>*/}
         <Route path="/History" element={<History />}></Route>
-        <Route path="/Profile" element={<Profile />}></Route>
+        {/*<Route path="/Profile" element={<Profile />}></Route>*/}
         <Route path="/camera" element={<CameraCapture />} />
 
         {/*<Route path="/dashboard">*/}
