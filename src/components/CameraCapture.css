@@ -1,0 +1,32 @@
+.camaraContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.camaraContainer h2 {
+  color: #383e45;
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+.camaraContainer .videoContainer {
+  width: 50vw;
+  padding-bottom: 2vh;
+  border-radius: 10px;
+}
+.camaraContainer .btn {
+  width: 40vw;
+}
+@media (min-width: 768px) {
+  .camaraContainer .videoContainer {
+    border-radius: 33px;
+  }
+  .camaraContainer .btn {
+    width: 20vw;
+  }
+}
+
+/*# sourceMappingURL=CameraCapture.css.map */

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './CameraCapture.scss'
 
 
 
@@ -79,17 +80,22 @@ const CameraCapture = () => {
 
   return (
     <div>
-      <h2>Capture a photo using your laptop camera</h2>
-      <video
-        ref={videoRef}
-        onLoadedMetadata={handleVideoLoaded}
-        autoPlay
-      />
-      {showCaptureButton && <button onClick={handleCapture}>Capture</button>}
-      <canvas
-        ref={canvasRef}
-        style={{ display: "none" }}
-      />
+      <div className="camaraContainer">
+        <h2>Capture a photo using your laptop camera</h2>
+        <video
+            className= 'videoContainer'
+            ref={videoRef}
+            onLoadedMetadata={handleVideoLoaded}
+            autoPlay
+        />
+        {showCaptureButton && <button className='btn' onClick={handleCapture}>Capture</button>}
+        <canvas
+            className= 'canvas container'
+            ref={canvasRef}
+            style={{ display: "none" }}
+        />
+      </div>
+
     </div>
   );
 };

@@ -1,0 +1,35 @@
+.camaraContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: #383e45;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  }
+  .videoContainer{
+    width: 50vw;
+    padding-bottom: 2vh;
+    border-radius: 10px;
+  }
+
+  .btn {
+    width: 40vw;
+  }
+  @media (min-width: 768px) {
+      .videoContainer{
+        border-radius: 33px;
+      }
+
+    .btn{
+      width: 20vw;
+    }
+
+  }
+}
+
+
