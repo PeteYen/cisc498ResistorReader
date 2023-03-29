@@ -8,6 +8,8 @@
  */
 import "./History.scss";
 import { useNavigate } from "react-router-dom";
+import { Storage } from "@aws-amplify/storage"
+
 
 const History = () => {
   let navigate = useNavigate();

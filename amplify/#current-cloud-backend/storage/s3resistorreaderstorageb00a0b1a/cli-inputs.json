@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3resistorreaderstorageb00a0b1a",
+  "bucketName": "resistorreader-storage-b00a0b1a",
+  "policyUUID": "4b72ea54",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
