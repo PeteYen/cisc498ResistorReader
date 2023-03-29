@@ -37,7 +37,7 @@ nav ul li a {
   transition: var(--transition);
 }
 nav ul li a:hover {
-  color: #6bc0bc;
+  color: var(--color-primary);
 }
 nav ul .icon {
   padding: 0 4vw;
