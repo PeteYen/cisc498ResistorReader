@@ -4,6 +4,9 @@
   justify-content: center;
   width: 100%;
   height: auto;
+  .btn {
+    padding-left: -15px;
+  }
   .imageContainer{
 
     align-items: center;
@@ -11,6 +14,7 @@
     img {
       align-items: center;
       width: 80vw;
+      padding: 4vw;
     }
   }
 

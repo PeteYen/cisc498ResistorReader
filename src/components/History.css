@@ -5,12 +5,16 @@
   width: 100%;
   height: auto;
 }
+.historyContainer .btn {
+  padding-left: -15px;
+}
 .historyContainer .imageContainer {
   align-items: center;
 }
 .historyContainer .imageContainer img {
   align-items: center;
   width: 80vw;
+  padding: 4vw;
 }
 
 /*# sourceMappingURL=History.css.map */
