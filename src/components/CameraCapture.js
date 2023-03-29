@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import './CameraCapture.scss'
 
 
-
 const CameraCapture = () => {
   const videoRef = useRef();
   const canvasRef = useRef();
@@ -11,6 +10,7 @@ const CameraCapture = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showCaptureButton, setShowCaptureButton] = useState(false);
   let navigate = useNavigate();
+  const [processedImageURL, setprocessedImageURL] = useState(null);
 
   useEffect(() => {
     const constraints = { video: true };
@@ -42,7 +42,7 @@ const CameraCapture = () => {
 
   const sendPhotoToBackend = async (dataURL) => {
     try {
-      const response = await fetch("http://localhost:8080/api/upload", {
+      const response = await fetch("http://142.189.244.40:8081/api/upload", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,9 @@ const CameraCapture = () => {
       });
   
       if (response.ok) {
-        navigate(`/Result`);
+        const processedImageURL = await response.text();
+            setprocessedImageURL(processedImageURL);
+            navigate(`/Result?img=${encodeURIComponent(processedImageURL)}`);
       } else {
         throw new Error("Failed to upload image");
       }

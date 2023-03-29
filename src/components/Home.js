@@ -5,6 +5,7 @@ import "./Home.scss";
 const Home = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
+  const [processedImageURL, setprocessedImageURL] = useState(null);
 
   const customRequest = async ({ file, onSuccess, onError }) => {
       const reader = new FileReader();
@@ -13,7 +14,7 @@ const Home = () => {
 
         // Send the dataURL to the backend
         try {
-          const response = await fetch("http://localhost:8080/api/upload", {
+          const response = await fetch("http://142.189.244.40:8081/api/upload", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -22,7 +23,9 @@ const Home = () => {
           });
 
           if (response.ok) {
-            navigate(`/Result`);
+            const processedImageURL = await response.text();
+            setprocessedImageURL(processedImageURL);
+            navigate(`/Result?img=${encodeURIComponent(processedImageURL)}`);
             onSuccess();
           } else {
             onError(new Error("Failed to upload image"));
@@ -39,7 +42,7 @@ const Home = () => {
 
     const sendPhotoToBackend = async (dataURL) => {
       try {
-        const response = await fetch("http://localhost:8080/api/upload", {
+        const response = await fetch("http://142.189.244.40:8081/api/upload", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +51,9 @@ const Home = () => {
         });
   
         if (response.ok) {
-          navigate(`/Result`);
+          const processedImageURL = await response.text();
+          setprocessedImageURL(processedImageURL);
+          navigate(`/Result?img=${encodeURIComponent(processedImageURL)}`);
         } else {
           throw new Error("Failed to upload image");
         }
@@ -57,37 +62,6 @@ const Home = () => {
       }
     };
   
-    const routeChange = () => {
-      const constraints = {
-        audio: false,
-        video: true,
-      };
-  
-      navigator.mediaDevices
-        .getUserMedia(constraints)
-        .then((stream) => {
-          const video = document.createElement("video");
-          video.srcObject = stream;
-          video.onloadedmetadata = async () => {
-            video.play();
-            const canvas = document.createElement("canvas");
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            const dataURL = canvas.toDataURL();
-  
-            // Send the taken photo to the backend
-            await sendPhotoToBackend(dataURL);
-            navigate('/Result');
-          };
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-
-        
-    };
   
   const handleUploadButtonClick = () => {
     fileInputRef.current.click();
@@ -111,9 +85,6 @@ const Home = () => {
 
             <button onClick={handleUploadButtonClick} className="imgButton btn">Upload Image</button>
 
-            <button onClick={routeChange} className="imgButton btn">
-              Take a picture by Phone
-            </button>
             <button
               onClick={() => navigate("/camera")}
               className="imgButton btn"
