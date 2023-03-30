@@ -1,8 +1,6 @@
-import './Result.scss';
 import React, { useEffect, useState } from 'react';
-import { useLocation } from "react-router";
-
-
+import { useLocation } from "react-router-dom";
+import './Result.scss';
 
 const Result = () => {
     const location = useLocation();
@@ -14,12 +12,16 @@ const Result = () => {
         setProcessedImageURL(imgParam);
     }, [location.search]);
 
+    const handleBackToHome = () => {
+        window.location.href = '/';
+    };
+
     return(
-            <div className="resultContainer">
-                <img
-                    className='imageShown'
-                    src={processedImageURL} alt="processedImage"/>
-            </div>
-    )
-}
-export default Result
+        <div className="resultContainer">
+            <img className='imageShown' src={processedImageURL} alt="processedImage"/>
+            <button className={`backToHome`} onClick={handleBackToHome}>Back to Home</button>
+        </div>
+    );
+};
+
+export default Result;

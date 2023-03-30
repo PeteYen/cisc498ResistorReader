@@ -13,7 +13,7 @@ const CameraCapture = () => {
   const [processedImageURL, setprocessedImageURL] = useState(null);
 
   useEffect(() => {
-    const constraints = { video: true };
+    const constraints = { video: { facingMode: 'environment' } };
     navigator.mediaDevices.getUserMedia(constraints)
       .then(stream => {
         setStream(stream);
@@ -74,8 +74,10 @@ const CameraCapture = () => {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    const dataURL = canvas.toDataURL("image/rng");
-  
+    const dataURL = canvas.toDataURL("image/jpeg");
+    //stop camara
+    stream.getTracks().forEach(track => track.stop());
+    setStream(null);
     // Send the captured photo to the backend
     sendPhotoToBackend(dataURL);
   };
@@ -83,7 +85,7 @@ const CameraCapture = () => {
   return (
     <div>
       <div className="camaraContainer">
-        <h2>Capture a photo using your laptop camera</h2>
+        <h2>Capture a photo using yourcamera</h2>
         <video
             className= 'videoContainer'
             ref={videoRef}
