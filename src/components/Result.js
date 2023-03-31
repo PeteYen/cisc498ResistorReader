@@ -19,7 +19,7 @@ const Result = () => {
     return(
         <div className="resultContainer">
             <img className='imageShown' src={processedImageURL} alt="processedImage"/>
-            <button className={`backToHome`} onClick={handleBackToHome}>Back to Home</button>
+            <button className={`btn`} onClick={handleBackToHome}>Back to Home</button>
         </div>
     );
 };
