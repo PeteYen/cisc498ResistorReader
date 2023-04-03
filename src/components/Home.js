@@ -14,7 +14,7 @@ const Home = () => {
 
         // Send the dataURL to the backend
         try {
-          const response = await fetch("https://142.189.244.40/api/upload", {
+          const response = await fetch("https://142.189.244.40:8081/api/upload", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const Home = () => {
 
     const sendPhotoToBackend = async (dataURL) => {
       try {
-        const response = await fetch("https://142.189.244.40/api/upload", {
+        const response = await fetch("https://142.189.244.40:8081/api/upload", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
