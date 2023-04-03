@@ -42,7 +42,7 @@ const CameraCapture = () => {
 
   const sendPhotoToBackend = async (dataURL) => {
     try {
-      const response = await fetch("http://142.189.244.40:8081/api/upload", {
+      const response = await fetch("https://142.189.244.40:8081/api/upload", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
