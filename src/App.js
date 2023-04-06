@@ -50,9 +50,9 @@ function App() {
               <li className="navItem">
                 <Link to="/About">Help</Link>
               </li>
-              {/*<li className="navItem">
+              <li className="navItem">
                 <Link to="/History">History</Link>
-              </li>*/}
+              </li>
             </>
           )}
           {/*<div className="icon"> <HelpOutlineIcon/></div>*/}
@@ -63,7 +63,7 @@ function App() {
         <Route path="/About" element={<About />}></Route>
         <Route path="/Result" element={<Result />}></Route>
         {/*<Route path="/Register" element={<Register />}></Route>*/}
-        {/*<Route path="/History" element={<History />}></Route>*/}
+        <Route path="/History" element={<History />}></Route>
         {/*<Route path="/Profile" element={<Profile />}></Route>*/}
         <Route path="/camera" element={<CameraCapture />} />
 
