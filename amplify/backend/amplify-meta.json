@@ -50,11 +50,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-04-06T05:26:05.011Z",
+      "lastPushTimeStamp": "2023-04-06T06:01:14.931Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apicisc498ResistorReader"
-      }
+      },
+      "lastPushDirHash": "UAVnLD4nKwvQ4S+i0EdR+2OTWFI="
     }
   },
   "auth": {
@@ -92,7 +93,7 @@
         "IdentityPoolName": "resistorreader67652d17_identitypool_67652d17__main",
         "UserPoolName": "resistorreader67652d17_userpool_67652d17"
       },
-      "lastPushTimeStamp": "2023-04-06T05:26:05.013Z",
+      "lastPushTimeStamp": "2023-04-06T06:01:14.936Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/auth/resistorreader67652d17-cloudformation-template.json",
         "logicalId": "authresistorreader67652d17"
@@ -101,20 +102,20 @@
     }
   },
   "storage": {
-    "s3resistorreaderstorageb00a0b1a": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
+    "s345f9a017": {
       "service": "S3",
-      "output": {
-        "BucketName": "resistorreader-storage-b00a0b1a55906-main",
-        "Region": "us-east-1"
-      },
-      "lastPushTimeStamp": "2023-04-06T05:26:05.930Z",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-04-06T06:01:15.128Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
-        "logicalId": "storages3resistorreaderstorageb00a0b1a"
+        "logicalId": "storages345f9a017"
       },
-      "lastPushDirHash": "Xk5SI4cyc5mf47VLaCVhfyxi++8="
+      "output": {
+        "BucketName": "cisc498resistorreade4e0ca717d9f64cb3981cfbbef5f55906-main",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "bWN26om2A549xXKbXYr6EpL/N+Q="
     }
   }
 }

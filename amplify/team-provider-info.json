@@ -15,8 +15,11 @@
       "auth": {
         "resistorreader67652d17": {}
       },
+      "api": {
+        "cisc498ResistorReader": {}
+      },
       "storage": {
-        "s3resistorreaderstorageb00a0b1a": {}
+        "s345f9a017": {}
       }
     }
   }
