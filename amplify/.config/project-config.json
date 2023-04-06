@@ -1,17 +1,17 @@
 {
-  "projectName": "ResistorReader",
+  "providers": [
+    "awscloudformation"
+  ],
+  "projectName": "cisc498ResistorReade",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
     "framework": "react",
     "config": {
-      "SourceDir": "src",
-      "DistributionDir": "build",
+      "SourceDir": "",
+      "DistributionDir": "",
       "BuildCommand": "npm.cmd run-script build",
       "StartCommand": "npm.cmd run-script start"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }

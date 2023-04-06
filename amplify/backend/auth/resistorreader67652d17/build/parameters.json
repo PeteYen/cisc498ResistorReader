@@ -1,6 +1,6 @@
 {
   "identityPoolName": "resistorreader67652d17_identitypool_67652d17",
-  "allowUnauthenticatedIdentities": false,
+  "allowUnauthenticatedIdentities": true,
   "resourceNameTruncated": "resist67652d17",
   "userPoolName": "resistorreader67652d17_userpool_67652d17",
   "autoVerifiedAttributes": [

@@ -2,6 +2,7 @@ import '@aws-amplify/ui-react/styles.css';
 import {Authenticator} from "@aws-amplify/ui-react";
 import "./History.scss"
 
+
 const History = () => {
     const image1 = require('../res_img/img.png');
     const image2 = require('../res_img/img_1.png');
@@ -16,7 +17,6 @@ const History = () => {
                         {images.map((image, index) => (
                             <img src={image} alt={`Image ${index}`} key={`image${index}`} />
                         ))}
-
                     </div>
                 </div>
                 )}

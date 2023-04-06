@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "cisc498ResistorReader",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authresistorreader67652d17",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
