@@ -1,26 +1,25 @@
 {
-  "dev": {
+  "final": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-resistorreader-dev-111301-authRole",
-      "UnauthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-dev-111301-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-dev-111301-authRole",
+      "AuthRoleName": "amplify-resistorreader-final-154320-authRole",
+      "UnauthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-final-154320-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-final-154320-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-resistorreader-dev-111301-deployment",
-      "UnauthRoleName": "amplify-resistorreader-dev-111301-unauthRole",
-      "StackName": "amplify-resistorreader-dev-111301",
-      "StackId": "arn:aws:cloudformation:us-east-1:940982040519:stack/amplify-resistorreader-dev-111301/b1288580-d556-11ed-8c1f-0a0359441ea5",
-      "AmplifyAppId": "d3enmx6bxhwm18"
+      "DeploymentBucketName": "amplify-resistorreader-final-154320-deployment",
+      "UnauthRoleName": "amplify-resistorreader-final-154320-unauthRole",
+      "StackName": "amplify-resistorreader-final-154320",
+      "StackId": "arn:aws:cloudformation:us-east-1:940982040519:stack/amplify-resistorreader-final-154320/ec37b480-d55a-11ed-920a-120ce60f3577",
+      "AmplifyAppId": "d3mnnisolexa6h"
     },
     "categories": {
-      "auth": {
-        "resistorreaderfb0ada32": {},
-        "resistorreaderc9f7a8e4": {}
-      },
       "hosting": {
         "amplifyhosting": {
-          "appId": "d3enmx6bxhwm18",
+          "appId": "d3mnnisolexa6h",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "resistorreaderc9f7a8e4": {}
       },
       "storage": {
         "s352e59fb8": {}

@@ -3,10 +3,10 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:d4ea6fd3-178d-4598-8009-d5f33358bf60",
+    "aws_cognito_identity_pool_id": "us-east-1:3859d37a-80ea-4229-9bb7-92e3e3c51afa",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_HdOGY9N4Y",
-    "aws_user_pools_web_client_id": "37t0o5ttagdj7t6ehr69918vkv",
+    "aws_user_pools_id": "us-east-1_sKNFPBnnP",
+    "aws_user_pools_web_client_id": "28va1id34ff5fp9m0ouplemrqj",
     "oauth": {},
     "aws_cognito_username_attributes": [
         "EMAIL"
@@ -21,12 +21,17 @@ const awsmobile = {
     ],
     "aws_cognito_password_protection_settings": {
         "passwordPolicyMinLength": 8,
-        "passwordPolicyCharacters": []
+        "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+        ]
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
-    "aws_user_files_s3_bucket": "cisc498resistorreade30752ff084f9419aa526a917e42111301-dev",
+    "aws_user_files_s3_bucket": "cisc498resistorreade30752ff084f9419aa526a917e42154320-final",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
