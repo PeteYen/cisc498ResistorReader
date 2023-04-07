@@ -1,6 +1,6 @@
 {
   "auth": {
-    "cisc498resistorreade94986a1e": {
+    "resistorreaderc9f7a8e4": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -17,8 +17,7 @@
         ],
         "socialProviders": [],
         "usernameAttributes": [
-          "EMAIL",
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "verificationMechanisms": [
           "EMAIL"
@@ -30,44 +29,11 @@
   },
   "hosting": {
     "amplifyhosting": {
-      "lastPushTimeStamp": "2023-04-07T14:08:20.677Z",
       "service": "amplifyhosting",
       "type": "cicd"
     }
   },
   "parameters": {
-    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_EMAILMESSAGE": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cisc498resistorreade26045087CustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_EMAILSUBJECT": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cisc498resistorreade26045087CustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_REDIRECTURL": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cisc498resistorreade26045087CustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_cisc498resistorreade26045087PostConfirmation_GROUP": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "cisc498resistorreade26045087PostConfirmation"
-        }
-      ]
-    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

@@ -37,7 +37,7 @@ const History = () => {
                 <div className='historyContainer'>
                     <button className='btn' onClick={signOut}>signOut</button>
                     <div className="imageContainer">
-                        {images.map((imageUrl, index) => (
+                        {images.slice(1).map((imageUrl, index) => (
                             <img src={imageUrl} alt={`Image ${index}`} key={`image${index}`} />
                         ))}
                     </div>
