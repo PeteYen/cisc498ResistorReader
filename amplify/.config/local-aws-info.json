@@ -1,5 +1,7 @@
 {
-  "main": {
-    "configLevel": "amplifyAdmin"
+  "final": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "root"
   }
 }

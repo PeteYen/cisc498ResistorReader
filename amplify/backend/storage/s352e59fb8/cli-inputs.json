@@ -1,0 +1,13 @@
+{
+  "resourceName": "s352e59fb8",
+  "policyUUID": "52e59fb8",
+  "bucketName": "cisc498resistorreade30752ff084f9419aa526a917e42",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

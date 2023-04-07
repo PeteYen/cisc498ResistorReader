@@ -1,43 +1,6 @@
 {
-  "api": {
-    "cisc498ResistorReader": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "resistorreader67652d17"
-        }
-      ],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            },
-            {
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 30,
-                "description": "api key description"
-              },
-              "authenticationType": "API_KEY"
-            }
-          ],
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authresistorreader67652d17"
-            }
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    }
-  },
   "auth": {
-    "resistorreader67652d17": {
+    "cisc498resistorreade94986a1e": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -54,7 +17,8 @@
         ],
         "socialProviders": [],
         "usernameAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "PHONE_NUMBER"
         ],
         "verificationMechanisms": [
           "EMAIL"
@@ -64,8 +28,42 @@
       "service": "Cognito"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cisc498resistorreade26045087CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cisc498resistorreade26045087CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_cisc498resistorreade26045087CustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cisc498resistorreade26045087CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_cisc498resistorreade26045087PostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cisc498resistorreade26045087PostConfirmation"
+        }
+      ]
+    }
+  },
   "storage": {
-    "s345f9a017": {
+    "s352e59fb8": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"

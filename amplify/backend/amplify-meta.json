@@ -1,121 +1,51 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-resistorreader-main-55906-authRole",
-      "UnauthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-main-55906-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::940982040519:role/amplify-resistorreader-main-55906-authRole",
+      "AuthRoleName": "amplify-cisc498resistorreade-final-92158-authRole",
+      "UnauthRoleArn": "arn:aws:iam::940982040519:role/amplify-cisc498resistorreade-final-92158-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::940982040519:role/amplify-cisc498resistorreade-final-92158-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-resistorreader-main-55906-deployment",
-      "UnauthRoleName": "amplify-resistorreader-main-55906-unauthRole",
-      "StackName": "amplify-resistorreader-main-55906",
-      "StackId": "arn:aws:cloudformation:us-east-1:940982040519:stack/amplify-resistorreader-main-55906/a53cfe60-d1e4-11ed-b1a5-0a730f7018d5",
-      "AmplifyAppId": "d3mnnisolexa6h"
-    }
-  },
-  "api": {
-    "cisc498ResistorReader": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "resistorreader67652d17"
-        }
-      ],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            },
-            {
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 30,
-                "description": "api key description"
-              },
-              "authenticationType": "API_KEY"
-            }
-          ],
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authresistorreader67652d17"
-            }
-          }
-        },
-        "GraphQLAPIIdOutput": "7nfy435ipzdfhb6hvmlgjlaucy",
-        "GraphQLAPIEndpointOutput": "https://myxtdlxkv5flldmhfskpgnomku.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-5nrafclk7nby3pjcc22ezweo4m"
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync",
-      "lastPushTimeStamp": "2023-04-06T06:01:14.931Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apicisc498ResistorReader"
-      },
-      "lastPushDirHash": "UAVnLD4nKwvQ4S+i0EdR+2OTWFI="
+      "DeploymentBucketName": "amplify-cisc498resistorreade-final-92158-deployment",
+      "UnauthRoleName": "amplify-cisc498resistorreade-final-92158-unauthRole",
+      "StackName": "amplify-cisc498resistorreade-final-92158",
+      "StackId": "arn:aws:cloudformation:us-east-1:940982040519:stack/amplify-cisc498resistorreade-final-92158/2f1b5c70-d547-11ed-8986-0acad7f7492d",
+      "AmplifyAppId": "d3jfbre9d2mcj8"
     }
   },
   "auth": {
-    "resistorreader67652d17": {
-      "customAuth": false,
+    "cisc498resistorreade94986a1e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
       "dependsOn": [],
+      "customAuth": false,
       "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "signupAttributes": [
+          "EMAIL"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
         ],
         "verificationMechanisms": [
           "EMAIL"
         ]
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito",
-      "output": {
-        "UserPoolId": "us-east-1_GoPxCyXTp",
-        "AppClientIDWeb": "5l9q0gah6ei51lk3sob2bk3s5c",
-        "AppClientID": "2bfm3rdvl77rtre6dcvvr2577p",
-        "IdentityPoolId": "us-east-1:bbf4d7be-88cf-4479-bfb3-d4dd49d1c6f3",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:940982040519:userpool/us-east-1_GoPxCyXTp",
-        "IdentityPoolName": "resistorreader67652d17_identitypool_67652d17__main",
-        "UserPoolName": "resistorreader67652d17_userpool_67652d17"
-      },
-      "lastPushTimeStamp": "2023-04-06T06:01:14.936Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/auth/resistorreader67652d17-cloudformation-template.json",
-        "logicalId": "authresistorreader67652d17"
-      },
-      "lastPushDirHash": "DcZeJ/8k0XsjLVcosDkDMgbalno="
+      }
     }
   },
   "storage": {
-    "s345f9a017": {
+    "s352e59fb8": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "lastPushTimeStamp": "2023-04-06T06:01:15.128Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-main-55906-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
-        "logicalId": "storages345f9a017"
-      },
-      "output": {
-        "BucketName": "cisc498resistorreade4e0ca717d9f64cb3981cfbbef5f55906-main",
-        "Region": "us-east-1"
-      },
-      "lastPushDirHash": "bWN26om2A549xXKbXYr6EpL/N+Q="
+      "dependsOn": []
     }
   }
 }
