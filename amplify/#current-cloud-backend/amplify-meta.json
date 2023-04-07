@@ -11,5 +11,73 @@
       "StackId": "arn:aws:cloudformation:us-east-1:940982040519:stack/amplify-cisc498resistorreade-final-92158/2f1b5c70-d547-11ed-8986-0acad7f7492d",
       "AmplifyAppId": "d3jfbre9d2mcj8"
     }
+  },
+  "auth": {
+    "cisc498resistorreade94986a1e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cisc498resistorreade-final-92158-deployment/amplify-cfn-templates/auth/cisc498resistorreade94986a1e-cloudformation-template.json",
+        "logicalId": "authcisc498resistorreade94986a1e"
+      },
+      "lastPushTimeStamp": "2023-04-07T14:12:06.267Z",
+      "output": {
+        "UserPoolId": "us-east-1_melVPCyAG",
+        "AppClientIDWeb": "ku28bt1fhims4k5helubmnedq",
+        "AppClientID": "5psflqr8l3urgme2nd5t4ok1qt",
+        "IdentityPoolId": "us-east-1:3728fdb0-146c-4d43-bb1e-3e28a2ba337d",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:940982040519:userpool/us-east-1_melVPCyAG",
+        "IdentityPoolName": "cisc498resistorreade94986a1e_identitypool_94986a1e__final",
+        "UserPoolName": "cisc498resistorreade94986a1e_userpool_94986a1e"
+      },
+      "lastPushDirHash": "wJ7aJVpSeUfABP9aKAxIL/KdZcQ="
+    }
+  },
+  "storage": {
+    "s352e59fb8": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-04-07T14:12:06.267Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cisc498resistorreade-final-92158-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages352e59fb8"
+      },
+      "output": {
+        "BucketName": "cisc498resistorreade30752ff084f9419aa526a917e4292158-final",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "KldMbn2/qBoaIpvhkcQYpamYMUk="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2023-04-07T14:08:20.677Z"
+    }
   }
 }

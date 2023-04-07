@@ -28,8 +28,6 @@ const Result = () => {
           const response = await fetch(`data:image/jpeg;base64,${imageData}`);
           const blob = await response.blob();
           const file = new File([blob], { type: 'image/jpeg' });
-          console.log(imageData);
-          console.log(file);
           // 将新的jpg文件上传到S3中
           await Storage.put(fileName, file);
           alert('Upload Done！Image has stored in s3 bucket.');

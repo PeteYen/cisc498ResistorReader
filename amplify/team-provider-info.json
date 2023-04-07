@@ -25,6 +25,15 @@
       "auth": {
         "cisc498resistorreade870b5efc": {},
         "cisc498resistorreade94986a1e": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3jfbre9d2mcj8",
+          "type": "cicd"
+        }
+      },
+      "storage": {
+        "s352e59fb8": {}
       }
     }
   }
