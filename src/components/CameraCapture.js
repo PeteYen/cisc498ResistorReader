@@ -36,6 +36,14 @@ const CameraCapture = () => {
     }
   }, [videoLoaded]);
 
+  useEffect(() => {
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    }
+  }, [stream]);
+
   const handleVideoLoaded = () => {
     setVideoLoaded(true);
   };
