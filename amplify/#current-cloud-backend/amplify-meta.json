@@ -52,12 +52,11 @@
         "IdentityPoolName": "resistorreaderc9f7a8e4_identitypool_c9f7a8e4__final",
         "UserPoolName": "resistorreaderc9f7a8e4_userpool_c9f7a8e4"
       },
-      "lastPushTimeStamp": "2023-04-07T16:12:10.526Z",
+      "lastPushTimeStamp": "2023-04-08T01:45:42.909Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-final-154320-deployment/amplify-cfn-templates/auth/resistorreaderc9f7a8e4-cloudformation-template.json",
         "logicalId": "authresistorreaderc9f7a8e4"
-      },
-      "lastPushDirHash": "iaXtTu68N+zdcJpMG6xQ5Rx8cEw="
+      }
     }
   },
   "hosting": {
@@ -75,11 +74,12 @@
         "BucketName": "cisc498resistorreade30752ff084f9419aa526a917e42154320-final",
         "Region": "us-east-1"
       },
-      "lastPushTimeStamp": "2023-04-07T16:12:10.440Z",
+      "lastPushTimeStamp": "2023-04-08T01:45:43.023Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-resistorreader-final-154320-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storages352e59fb8"
-      }
+      },
+      "lastPushDirHash": "ULvLD80EGEdpjjjy8mKGf9KLbFE="
     }
   }
 }

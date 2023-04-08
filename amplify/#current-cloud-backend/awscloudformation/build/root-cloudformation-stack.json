@@ -218,7 +218,7 @@
         "Parameters": {
           "bucketName": "cisc498resistorreade30752ff084f9419aa526a917e42",
           "selectedGuestPermissions": "",
-          "selectedAuthenticatedPermissions": "s3:PutObject,s3:GetObject,s3:ListBucket",
+          "selectedAuthenticatedPermissions": "s3:GetObject,s3:ListBucket,s3:PutObject,s3:DeleteObject",
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
@@ -234,9 +234,9 @@
           "unauthPolicyName": "s3_amplify_52e59fb8",
           "AuthenticatedAllowList": "ALLOW",
           "GuestAllowList": "DISALLOW",
-          "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject",
-          "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject",
-          "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject",
+          "s3PermissionsAuthenticatedPrivate": "s3:GetObject,s3:PutObject,s3:DeleteObject",
+          "s3PermissionsAuthenticatedProtected": "s3:GetObject,s3:PutObject,s3:DeleteObject",
+          "s3PermissionsAuthenticatedPublic": "s3:GetObject,s3:PutObject,s3:DeleteObject",
           "s3PermissionsAuthenticatedUploads": "s3:PutObject",
           "s3PermissionsGuestPublic": "DISALLOW",
           "s3PermissionsGuestUploads": "DISALLOW",
